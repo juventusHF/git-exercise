@@ -90,7 +90,7 @@ Lösche den Branch: `git branch -d <branch-name>`
 Einer der Hauptgründe für den Einsatz eines VCS ist die vereinfachte Zusammenarbeit mit mehreren Entwicklern.  
 
 #### Merge Conflicts verursachen
-Meistens spricht man sich ab, wer an welchem Teil der Software arbeitet. Manchmal gibt es aber Situationen in denen mehrere Entwickler Änderungen an der gleichen Datei vorgenommen haben.  
+Manchmal gibt es Situationen in denen mehrere Entwickler Änderungen an der gleichen Datei vorgenommen haben.  
 Beim Mergen kann es dann zu einem Merge Conflict kommen. Das heisst, Git weiss nicht wie es die Änderungen an einer Datei Zusammenführen soll und braucht manuelle Unterstützung.  
 
 * Person A und Person B nehmen beide Änderungen in der gleichen Datei vor.
@@ -118,6 +118,11 @@ Dazu gibt es zwei relevante Kommandos: `git revert` und `git reset`
 Dokumentation:  
 https://www.w3schools.com/git/git_revert.asp?remote=github  
 https://www.w3schools.com/git/git_reset.asp?remote=github  
+
+#### Merge Conflicts vermeiden
+* Kommunikation
+* Kurzlebige Branches
+* Feature Branches immer wieder aktualisieren mit `git merge` oder `git rebase`
 
 ## Oh shit
 
