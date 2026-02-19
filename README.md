@@ -85,6 +85,7 @@ Lösche auch lokal alle nicht verwendeten Branches.
 
 Überprüfe die Liste aller lokalen Branches: `git branch`  
 Lösche den Branch: `git branch -D <branch-name>`  
+Remote branch löschen: `git push origin -d <branch-name>`
 
 ## Zusammenarbeit im Team
 Einer der Hauptgründe für den Einsatz eines VCS ist die vereinfachte Zusammenarbeit mit mehreren Entwicklern.  
