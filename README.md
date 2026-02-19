@@ -84,7 +84,7 @@ Auf dem Remote sollte (je nach Einstellung) der Feature Branch nach dem Merge be
 Lösche auch lokal alle nicht verwendeten Branches.  
 
 Überprüfe die Liste aller lokalen Branches: `git branch`  
-Lösche den Branch: `git branch -d <branch-name>`  
+Lösche den Branch: `git branch -D <branch-name>`  
 
 ## Zusammenarbeit im Team
 Einer der Hauptgründe für den Einsatz eines VCS ist die vereinfachte Zusammenarbeit mit mehreren Entwicklern.  
@@ -95,22 +95,26 @@ Beim Mergen kann es dann zu einem Merge Conflict kommen. Das heisst, Git weiss n
 
 * Person A und Person B nehmen beide Änderungen in der gleichen Datei vor.
 * Person A merged seine Änderungen auf main
-* Person B merkt dass seine Änderungen einen Merge Conflict verursachen.
+* Person B merkt, dass seine Änderungen einen Merge Conflict verursachen.
 
 #### Merge Conflicts lösen
-Es gibt verschiedene Möglichkeiten um einen Merge Conflict zu lösen.  
+Es gibt verschiedene Möglichkeiten, um einen Merge Conflict zu lösen.  
 
 ##### Verwendung von Tools
-Es gibt verschiedene grafische Tools um Merge Conflicts einfacher zu lösen.  
+Es gibt verschiedene grafische Tools, um Merge Conflicts einfacher zu lösen.  
 * Eingebaut in Github/Gitlab/etc.
 * Eingebaut in der IDE
 * Extern
 
 ##### Lokaler Rebase
-* Person B aktualisiert lokal den main Branch
-* Führt dann den Rebase auf dem Feature Branch aus: `git rebase main`
-* Löst die Merge conflicts
-* Committet die Änderungen
+* Person B aktualisiert führt folgende kommandos aus:
+  * Metadaten aktualisieren `git fetch`
+  * Rebase starten `git rebase origin/main`
+  * Merge Konflikte manuell lösen
+  * Geänderte Dateien hinzufügen `git add .`
+  * Rebase fortsetzen `git rebase --continue` oder abbrechen bei unklarheit `git rebase --abort`
+  * Commit message festlegen
+  * Änderungen pushen `git push -f origin <branch-name>`
 
 ##### Revert oder Reset
 Je nach Situation kann es am einfachsten und schnellsten sein einen Teil der lokalen Änderungen zu verwerfen, den Branch ohne Konflikte zu rebasen und die Änderungen dann wieder einzufühen.  
